@@ -1,19 +1,19 @@
 # AtliQ Hardware Sales Insights
 
 ### AtliQ Hardware
-Is a company which supplies computer hardware and peripherals to many clients across India.\
+A company that supplies computer hardware and peripherals to many clients across India.\
 The company has a head office in Delhi and regional offices throughout India.
 
 ---
 
 ### Business Issue
-The sales director is facing a lot of challenges. The marketing is growing dynamically and then he’s struggling in terms of tracking the sales, needing more accurate insights about the company sales, and then take the necessary decisions.
+The sales director is facing a lot of challenges. The marketing is growing dynamically, he is struggling to keep track of the sales. He needs more accurate insights about the company sales and then makes the necessary decisions.
 
 ---
 
 ### Solution
 - Create a simple and informative dashboard about the company sales.
-- I used **`SQL`** queries in **`MySQL Workbench`** to take a look into the data and **`Tableau`** for **`ETL`** and **`Visualizations`** to create the insights dashboard.
+- I used **`SQL`** queries in **`MySQL Workbench`** to look into the data and **`Tableau`** for **`ETL`** and **`Visualizations`** to create the insights dashboard.
 
 ---
 
@@ -126,12 +126,12 @@ After a quick data exploration in MySQL, here are some initial findings:
 ---
 
 ### ETL(Extract, Transform, Load)
-Once I know the basic features of the data I have to work with, I imported the MySQL database into Tableau to do the necessary transformations and end up with a simple, reliable, and useful dashboard.
+Once I knew the basic features of the data I had to work with, I Imported the MySQL database into Tableau to do the necessary transformations and make a simple, reliable, and helpful dashboard.
 
 ---
 
 ### Data Modeling Step
-We got five tables and we need to ensure that the tables are correctly connected.
+We have one main table and four other tables with one shared column in other tables and the main table, with which we have to connect the tables.
 - Main Table: transactions
 
 |Table|Column|Main Table Column|
@@ -144,7 +144,7 @@ We got five tables and we need to ensure that the tables are correctly connected
 ---
 
 ### Filtering, Cleaning and Adding New Columns
-- As the company is operating only in India, filtered out “Paris” and “New York” in the sales markets table.
+- The company is serving only in India, So “Paris” and “New York” in the market table are garbage values, so filtering them out.
 - The “currency” column (in transactions table) have 2 USD currency values, So created a new column called “Sales”, where all the sales_amount is in INR Currency.
 
 ---
