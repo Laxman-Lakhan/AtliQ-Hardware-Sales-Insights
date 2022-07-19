@@ -182,7 +182,7 @@ Once I knew the basic features of the data I had to work with, I Imported the My
 ---
 
 ### Data Modeling Step
-We have one main table and four other tables with one shared column in other tables and the main table, with which we have to connect the tables.
+We have one main table and four other tables having one shared column with the main table. So we will connect the other tables to the main table using the shared columns.
 - Main Table: transactions
 
 |Table|Column|Main Table Column|
@@ -192,9 +192,9 @@ We have one main table and four other tables with one shared column in other tab
 |products|Market_Code|Market_Code|
 |markets|Product_Code|Product_Code|
 
----
+# 
 
-### Filtering, Cleaning and Adding New Columns
+##### Filtering, Cleaning and Adding New Columns
 - The company is serving only in India, So “Paris” and “New York” in the market table are garbage values, so filtering them out.
 - The “currency” column (in transactions table) have 2 USD currency values, So created a new column called “Sales”, where all the sales_amount is in INR Currency.
 
