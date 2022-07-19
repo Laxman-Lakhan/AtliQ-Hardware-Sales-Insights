@@ -168,7 +168,7 @@ The two dashboards shows all the main information about the company sales.
     - Markets Which creating Loss
     - Top 10 Lossing Products
 
-It can be filtered by YEAR and it's a interactive Dashboard i.e, each other insights are inter-related and can be seen in any respects. So the sales director can have a deeper and quick view of the sales to support his decision making process.
+- It can be filtered by YEAR and it's a interactive Dashboard i.e, each other insights are inter-related and can be seen in any respects. So the sales director can have a deeper and quick view of the sales to support his decision making process.
 
 ---
 ### Final Report
