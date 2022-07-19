@@ -174,13 +174,13 @@ It can be filtered by YEAR and it's a interactive Dashboard i.e, each other insi
 ### Final Report
 Based on the dashbaords insights, I have made some conclusions and recommendation that Sales Marketing team should/can consider making a sales strategy.
 
-##### Conclusions
+#### # Conclusions
 - Sales were rapidly decreasing in 2020 compared to 2019 by around 57.7%.
 - Highest revenue generated from Markets such as Delhi NCR, Mumbai, Ahmedabad, Bhopal, Nagpur, and so on.
 - Highest quantities sold in the Market such as Delhi NCR, Mumbai, Nagpur, Kochi, Ahmedabad, and so on.
 - Majority of the sales were takes place in the month of January followed by November and March.
 
-##### Recommendation
+#### # Recommendation
 - Make a new sales strategy for lucknow since its showing lowest revenue and negative profit margin and if possible so as for Surat and Bhubhaneshwar also.
 - try to increase sales quantity in Patna, Surat and Kanpur since they have lowest sales quantity.
 - start target campagin for Prod047 and Prod061 since they two are the most profitable and most selling products.
@@ -189,4 +189,6 @@ Based on the dashbaords insights, I have made some conclusions and recommendatio
 
 ---
 
-*Project source: [codebasics](https://youtube.com/playlist?list=PLeo1K3hjS3usDI9XeUgjNZs6VnE0meBrL) YouTube channel.*
+### References
+- *Project Inspiration: [codebasics](https://youtube.com/playlist?list=PLeo1K3hjS3usDI9XeUgjNZs6VnE0meBrL) YouTube channel.*
+- *Project Data: [Google Sheet](https://docs.google.com/spreadsheets/d/1cidC_V9YrS789-ZYTdAM1OgIXZVa_XfkRVy5Cyp3Qk8/edit?usp=sharing) | [SQL Dump File]()*
