@@ -191,4 +191,4 @@ Based on the dashbaords insights, I have made some conclusions and recommendatio
 
 ### References
 - *Project Inspiration: [codebasics](https://youtube.com/playlist?list=PLeo1K3hjS3usDI9XeUgjNZs6VnE0meBrL) YouTube channel.*
-- *Project Data: [Google Sheet](https://docs.google.com/spreadsheets/d/1cidC_V9YrS789-ZYTdAM1OgIXZVa_XfkRVy5Cyp3Qk8/edit?usp=sharing) | [SQL Dump File]()*
+- *Project Data: [Google Sheet](https://docs.google.com/spreadsheets/d/1cidC_V9YrS789-ZYTdAM1OgIXZVa_XfkRVy5Cyp3Qk8/edit?usp=sharing) | [MySQL Dump File](https://github.com/Laxman-Lakhan/AtliQ-Hardware-Sales-Insights/blob/a7e93603f70e2352ef3595c3717e4e7f3b352697/Data/database_dump.sql)*
