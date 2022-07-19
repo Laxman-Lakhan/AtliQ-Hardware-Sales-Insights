@@ -1,23 +1,23 @@
 # AtliQ Hardware Sales Insights
 
-### AtliQ Hardware
+## AtliQ Hardware
 A company that supplies computer hardware and peripherals to many clients across India.\
 The company has a head office in Delhi and regional offices throughout India.
 
 ---
 
-### Business Issue
+## Business Issue
 The sales director is facing a lot of challenges. The marketing is growing dynamically, he is struggling to keep track of the sales. He needs more accurate insights about the company sales and then makes the necessary decisions.
 
 ---
 
-### Solution
+## Solution
 - Create a simple and informative dashboard about the company sales.
 - I used **`SQL`** queries in **`MySQL Workbench`** to look into the data and **`Tableau`** for **`ETL`** and **`Visualizations`** to create the insights dashboard.
 
 ---
 
-### Data Overview
+## Data Overview
 
 #### `# Tables`
     
@@ -176,33 +176,37 @@ After a quick data exploration in MySQL, here are some initial findings:
 
 ---
 
-### ETL(Extract, Transform, Load)
+## ETL(Extract, Transform, Load)
 Once I knew the basic features of the data I had to work with, I Imported the MySQL database into Tableau to do the necessary transformations and make a simple, reliable, and helpful dashboard.
 
----
+# 
 
-### Data Modeling Step
+#### # Data Modeling Step
 We have one main table and four other tables having one shared column with the main table. So we will connect the other tables to the main table using the shared columns.
+<img align="right" alt="Coding" width="573" src= "https://github.com/Laxman-Lakhan/AtliQ-Hardware-Sales-Insights/blob/acba4322c422a8dac8b24a450ca1b6a35384617a/Data/Screenshots/ETL_.png" >
+
 - Main Table: transactions
 
-|Table|Column|Main Table Column|
+|Table|Column|Main Table Column|   
 |---|---|---|
 |customers|Customer_Code|Customer_Code|
 |date|date|Order_Date|
 |products|Market_Code|Market_Code|
 |markets|Product_Code|Product_Code|
 
+
 # 
 
-##### Filtering, Cleaning and Adding New Columns
+#### # Filtering, Cleaning and Adding New Columns
 - The company is serving only in India, So “Paris” and “New York” in the market table are garbage values, so filtering them out.
 - The “currency” column (in transactions table) have 2 USD currency values, So created a new column called “Sales”, where all the sales_amount is in INR Currency.
 
 ---
 
-### Dashboards
+## Dashboards
 The two dashboards shows all the main information about the company sales.
-- Dashboard 1: Sales Insights
+
+#### # Dashboard 1: Sales Insights
 <div class='tableauPlaceholder' id='viz1658228506034' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;At&#47;AtliqHardware&#47;AtliqHardware&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='AtliqHardware&#47;AtliqHardware' /><param name='tabs' value='yes' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;At&#47;AtliqHardware&#47;AtliqHardware&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-GB' /></object></div>
 
     - Revenue
@@ -222,7 +226,7 @@ The two dashboards shows all the main information about the company sales.
 - It can be filtered by YEAR and it's a interactive Dashboard i.e, each other insights are inter-related and can be seen in any respects. So the sales director can have a deeper and quick view of the sales to support his decision making process.
 
 ---
-### Final Report
+## Final Report
 Based on the dashbaords insights, I have made some conclusions and recommendation that Sales Marketing team should/can consider making a sales strategy.
 
 #### # Conclusions
@@ -240,7 +244,7 @@ Based on the dashbaords insights, I have made some conclusions and recommendatio
 
 ---
 
-### References
+## *References*
 - *Tableau Dashboard: [AtliQ Hardware Sales Insights by Laxman Singh](https://public.tableau.com/views/AtliqHardware/AtliqHardware?:language=en-GB&:display_count=n&:origin=viz_share_link)*
 - *Project Data: [Google Sheet](https://docs.google.com/spreadsheets/d/1cidC_V9YrS789-ZYTdAM1OgIXZVa_XfkRVy5Cyp3Qk8/edit?usp=sharing) | [MySQL Dump File](https://github.com/Laxman-Lakhan/AtliQ-Hardware-Sales-Insights/blob/a7e93603f70e2352ef3595c3717e4e7f3b352697/Data/database_dump.sql)*
 - *Project Inspiration: [codebasics](https://youtube.com/playlist?list=PLeo1K3hjS3usDI9XeUgjNZs6VnE0meBrL) YouTube channel.*
