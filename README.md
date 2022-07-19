@@ -22,7 +22,7 @@ The sales director is facing a lot of challenges. The marketing is growing dynam
 #### `# Tables`
     
 <table>
-<tr><th>1. transactions</th><th>2. customers</th><th>3. date</th></tr>
+<tr><th>1. transactions</th><th>2. customers</th><th>3. date</th><th> 4. products </th><th> 5. markets </th></tr>
 <tr><td>
 
 |Field Name|Description|
@@ -55,13 +55,9 @@ The sales director is facing a lot of challenges. The marketing is growing dynam
 |Year||
 |Month Name||
 |Date Yy Mmm||
-
-
-</td></tr> </table>
-<table>
-<tr><th> 4. products </th><th> 5. markets </th></tr>
-<tr><td>
-
+	
+</td><td>
+	
 |Field Name|Description|
 |---|---|
 |Product Code||
@@ -74,6 +70,7 @@ The sales director is facing a lot of challenges. The marketing is growing dynam
 |Markets Code||
 |Markets Name||
 |Zone||
+
 
 </td></tr> </table>
 
