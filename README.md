@@ -27,49 +27,49 @@ The sales director is facing a lot of challenges. The marketing is growing dynam
 
 |Field Name|Description|
 |----|---|
-|Product Code||
-|Customer Code||
-|Market Code||
-|Order Date||
-|Sales Qty||
-|Sales Amount||
-|Currency||
-|Profit Margin||
-|Profit||
-|Cost||
+|Product Code|ProdXXX|
+|Customer Code|CusXXX|
+|Market Code|MarkXXX|
+|Order Date|YYYY-MM-DD|
+|Sales Qty|Quantity Sold|
+|Sales Amount|Sales Amount|
+|Currency|INR/USD|
+|Profit Margin|(Sales Amount - Cost)/(Sales Amount)|
+|Profit|(Sales Amount-Cost)|
+|Cost|Total Cost of a Product|
 
 </td><td>
 
 |Field Name|Description|
 |---|---|
-|Customer Code||
-|Custmer Name||
-|Customer Type||
+|Customer Code|CusXXX|
+|Custmer Name|Stores Names|
+|Customer Type|Brick & Mortar/ E-Commerce|
 
 </td><td>
 
 |Field Name|Description|
 |---|---|
-|Date||
-|Cy Date||
-|Year||
-|Month Name||
-|Date Yy Mmm||
+|Date|YYYY-MM-DD|
+|Cy Date|YYYY-MM-DD: Starting date of each month of date|
+|Year|YYYY: Year of the date|
+|Month Name|MMMM: Month of the date column|
+|Date Yy Mmm|DD-MMM: Date and Month of the date column|
 	
 </td><td>
 	
 |Field Name|Description|
 |---|---|
-|Product Code||
-|Product Type||
+|Product Code|ProdXXX|
+|Product Type|Own Brand/Distribution|
 
 </td><td>
 
 |Field Name|Description|
 |---|---|
-|Markets Code||
-|Markets Name||
-|Zone||
+|Markets Code|MarkXXX|
+|Markets Name|City Names|
+|Zone|South/Central/North|
 
 
 </td></tr> </table>
@@ -77,42 +77,93 @@ The sales director is facing a lot of challenges. The marketing is growing dynam
 #  
 #### `# Data Analysis Using SQL`
 
-1. Show all customer records
+1. Show all tables and their rows in sales schema
+    	 
+	 > ```
+	 > SELECT TABLE_SCHEMA, TABLE_NAME, TABLE_ROWS  
+	 > FROM INFORMATION_SCHEMA.TABLES 
+	 > WHERE TABLE_SCHEMA = 'sales';
+	 > ```
+	 > |TABLE_SCHEMA|TABLE_NAME|TABLE_ROWS|
+	 > |---|----|---|
+	 > |sales|customers|38|
+	 > |sales|date|1126|
+	 > |sales|markets|17|
+	 > |sales|products|279|
+	 > |sales|ransactions|147678|
 
-    `SELECT * FROM customers;`
 
-1. Show total number of customers
+1. Show date range
+    	
+	> ```
+	> SELECT 'First Date', MIn(Order_Date)  
+	> FROM sales.transactions  
+	> UNION  
+	> SELECT 'Last Date', MAX(Order_Date)  
+	> FROM sales.transactions;
+	> ``` 
+	> 
+	> <table>
+	> <tr>
+	>     <td>First Date</td>
+	>     <td>2017-10-04</td>
+	> </tr>
+	> <tr>
+	>     <td>Last Date</td>
+	>     <td>2020-06-26</td>
+	> </tr>
+	> </table>
 
-    `SELECT count(*) FROM customers;`
 
-1. Show transactions for Chennai market (market code for chennai is Mark001
+1. Show Revenue in 2020 and 2019.
 
-    `SELECT * FROM transactions where market_code='Mark001';`
+	> ```
+	> SELECT d.year, SUM(Sales_Amount)
+	> FROM sales.transactions as t
+	> JOIN sales.date as d
+	> ON t.Order_Date = d.date
+	> WHERE d.year = '2019'
+	> UNION
+	> SELECT d.year, SUM(Sales_Amount)
+	> FROM sales.transactions as t
+	> JOIN sales.date as d
+	> ON t.Order_Date = d.date
+	> WHERE d.year = '2020';
+	> ``` 
+	> 
+	> <table>
+	> <tr>
+	>     <td>2019</td>
+	>     <td>336019102</td>
+	> </tr>
+	> <tr>
+	>     <td>2020</td>
+	>     <td>142224545</td>
+	> </tr>
+	> </table>
 
-1. Show distrinct product codes that were sold in chennai
 
-    `SELECT distinct product_code FROM transactions where market_code='Mark001';`
 
-1. Show transactions where currency is US dollars
+1. Show distinct currency and their count
 
-    `SELECT * from transactions where currency="USD"`
+	> ```
+	> SELECT currency, COUNT(currency)
+	> FROM sales.transactions
+	> GROUP BY currency;
+	> ``` 
+	> 
+	> <table>
+	> <tr>
+	>     <td>INR</td>
+	>     <td>148393</td>
+	> </tr>
+	> <tr>
+	>     <td>USD</td>
+	>     <td>2</td>
+	> </tr>
+	> </table>
 
-1. Show transactions in 2020 join by date table
-
-    `SELECT transactions.*, date.* FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020;`
-
-1. Show total revenue in year 2020,
-
-    `SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020 and transactions.currency="INR\r" or transactions.currency="USD\r";`
 	
-1. Show total revenue in year 2020, January Month,
-
-    `SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020 and and date.month_name="January" and (transactions.currency="INR\r" or transactions.currency="USD\r");`
-
-1. Show total revenue in year 2020 in Chennai
-
-    `SELECT SUM(transactions.sales_amount) FROM transactions INNER JOIN date ON transactions.order_date=date.date where date.year=2020
-and transactions.market_code="Mark001";`
 # 
 #### `# Insights`
 After a quick data exploration in MySQL, here are some initial findings:
